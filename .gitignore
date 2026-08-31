@@ -1,0 +1,3 @@
+pledge-exec
+*.core
+*.o
