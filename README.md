@@ -1,5 +1,7 @@
 # pledge-exec
 
+[![build](https://github.com/simplestringdev/pledge-exec/actions/workflows/build.yml/badge.svg)](https://github.com/simplestringdev/pledge-exec/actions/workflows/build.yml)
+
 A ~100-line C wrapper that applies OpenBSD's `pledge(2)` and `unveil(2)`
 to an arbitrary program before exec'ing it, driven entirely by command-line
 flags. No bespoke C needed per script you want to sandbox.
@@ -100,7 +102,10 @@ all tests passed
 cc -o pledge-exec pledge-exec.c
 ```
 
-No dependencies beyond the OpenBSD base system's libc.
+No dependencies beyond the OpenBSD base system's libc. CI compiles and
+runs the full test suite inside a real OpenBSD VM on every push
+(`.github/workflows/build.yml`, via `vmactions/openbsd-vm`) - the badge
+above is a live check, not a claim.
 
 ## Examples
 
